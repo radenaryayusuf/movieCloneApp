@@ -28,7 +28,7 @@ export default class TodoDetail extends Component<Props> {
           Hello Kamu
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit TodoDetail.js
+          Memulai Pertama, edit TodoDetail.js
         </Text>
         <Text style={styles.instructions}>
           {instructions}
