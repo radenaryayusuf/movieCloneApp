@@ -30,6 +30,10 @@ export default class TodoDetail extends Component<Props> {
         <Text style={styles.instructions}>
           Memulai Pertama, Ganti something
         </Text>
+
+        <Text style={styles.instructions}>
+          Memulai Pertama, Ganti something tapi boong
+        </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>
