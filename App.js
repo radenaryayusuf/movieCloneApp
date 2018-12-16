@@ -4,7 +4,7 @@ import { createReduxBoundAddListener } from 'react-navigation-redux-helpers';
 import { Provider, connect } from 'react-redux';
 
 import RootNavigator from './app/navigators/RootNavigator';
-import store from './app/redux/store';
+import stored from './app/redux/store';
 
 const addListener = createReduxBoundAddListener("root");
 
@@ -29,7 +29,7 @@ const AppWithNavigationState = connect(mapStateToProps)(App);
 export default class Root extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={stored}>
         <AppWithNavigationState />
       </Provider>
     );
