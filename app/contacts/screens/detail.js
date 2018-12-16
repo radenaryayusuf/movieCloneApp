@@ -25,7 +25,7 @@ export default class TodoDetail extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Hello Kamu
+          Hello Kamu Ya Kamu
         </Text>
         <Text style={styles.instructions}>
           Memulai Pertama, edit TodoDetail.js
