@@ -11,5 +11,5 @@ export {
     SearchPage,
     CastPage,
 
-    LoginPage,
+    LoginPage
 }
