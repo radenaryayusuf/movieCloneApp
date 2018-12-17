@@ -1,7 +1,7 @@
 import { StackNavigator } from 'react-navigation';
 
 import { ContactsList, ContactsCreate, ContactsDetail } from '../contacts/screens'
-import { LoginPage, HomePage, MoviePage, CastPage, SearchPage } from '../notflix/screens'
+import { LoginPage, HomePage, MoviePage, CastPage, SearchPage } from '../notflix/screen'
 
 const RootNavigator = StackNavigator({
   ContactsList: {
