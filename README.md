@@ -35,8 +35,14 @@ $ react-native run-ios
 ##cons (On progress)
 
 $ Login Auth
+
 $ Play Video Streaming
+
 $ Search
+
 $ Category
+
 $ Drawer
+
 $ One Signal
+
