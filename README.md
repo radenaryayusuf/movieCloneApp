@@ -11,9 +11,13 @@
 open terminal and change directory to your desired folder, then:
 
 $ git clone https://github.com/radenaryayusuf/movieCloneApp
+
 $ cd movieCloneApp
+
 $ npm install
+
 $ react-native link
+
 
 
 ## Running Your App
@@ -21,8 +25,12 @@ $ react-native link
 Make sure to open your emulator first, then
 
 $ react-native run-android
+
 or
+
 $ react-native run-ios
+
+
 
 ##cons (On progress)
 
