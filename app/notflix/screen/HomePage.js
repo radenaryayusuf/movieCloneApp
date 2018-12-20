@@ -6,16 +6,27 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   RefreshControl,
-  Image
+  Image,
+  TouchableHighlight,
+  ImageBackground,
 } from 'react-native';
-import { Content } from 'native-base';
+import { Col, Row, Grid } from "react-native-easy-grid";
+import { Right, Content, Footer, FooterTab,Icon,Button } from 'native-base'
+import { connect } from 'react-redux'
+import { newRelease, mostRated } from '../actions'
+import StarRating from 'react-native-star-rating'
 
 const HEADER_MAX_HEIGHT = 300;
 const HEADER_MIN_HEIGHT = Platform.OS === 'ios' ? 60 : 73;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
-export default class HomePage extends Component {
+ class HomePage extends Component {
+  componentDidMount() {
+    this.props.dispatch(newRelease())
+    this.props.dispatch(mostRated())
+  }
   constructor(props) {
     super(props);
 
@@ -40,7 +51,10 @@ export default class HomePage extends Component {
       </View>
     );
   }
-
+  
+  gotoMovie(id,genre) {
+    this.props.navigation.navigate('MoviePage', {id, genre})
+  }
   render() {
     // Because of content inset the scroll value will be negative on iOS so bring
     // it back to 0.
@@ -59,15 +73,16 @@ export default class HomePage extends Component {
       outputRange: [1, 1, 0],
       extrapolate: 'clamp',
     });
+  
     const imageTranslate = scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, 100],
       extrapolate: 'clamp',
     });
-
+   
     const titleScale = scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-      outputRange: [1, 1, 0.8],
+      outputRange: [1, 1, 1],
       extrapolate: 'clamp',
     });
     const titleTranslate = scrollY.interpolate({
@@ -75,9 +90,10 @@ export default class HomePage extends Component {
       outputRange: [0, 0, -8],
       extrapolate: 'clamp',
     });
+   
 
     return (
-      <View style={{flex:1, backgroundColor:'#161616'}}>
+      <View style={{backgroundColor: '#0C0C0C', flex:1}}>
         <StatusBar
           translucent
           barStyle="light-content"
@@ -109,12 +125,85 @@ export default class HomePage extends Component {
             y: -HEADER_MAX_HEIGHT,
           }}
         >
-          {this._renderScrollViewContent()}
-          {/* <Content padder  style={styles.scrollViewContent}>
-  
-            <Text style={{color:'#fff'}}>HI</Text>
-          </Content> */}
+          {/* {this._renderScrollViewContent()} */}
+       
+          <View style={styles.scrollViewContent}>     
+            <Content padder>
+              <ScrollView scrollEventThrottle = {10}>
+              <View style={{flex: 1, backgroundColor: 'transparent'}}>
+                <Text style={{color:'#F3F3F3', fontFamily: 'Avenir', fontSize:15}}>Trending</Text>
+                
+              {
+                this.props.newrelease.isLoading? (
+                  <Text>LOADING</Text>
+                ):(
+                  <ScrollView   horizontal={true} showsHorizontalScrollIndicator={false}>
+                {this.props.newrelease.results.map((item) => (
+                  
+                  <TouchableHighlight key={item.id} onPress={ () => {this.gotoMovie(item.id, item.genre)}}>
+                <View style={{height: 200, width: 130, marginLeft: 20, marginBottom: 15,marginTop: 10, borderWidth: 1, borderColor: '#0C0C0C', shadowColor:'#000', shadowOffset: {width: 1, height: 1}, shadowRadius: 10,shadowOpacity: 1.0 }}>
+            
+            <View  style={{flex: 2, borderRadius:5}} >
+            
+               <Image 
+               source={{uri:item.image}}
+               style={{
+                 flex:1, width: null, height: null, resizeMode: 'cover',borderRadius:20
+               }}
+               />
+            </View>
+            <View style={{justifyContent:"center",alignItems:"center",paddingTop:0}}>
+               <Text style={{color:'#F3F3F3',fontFamily:"Avenir"}}>{item.title}</Text>
+               </View>
+           
+            </View>
+                 </TouchableHighlight>
+       
+          ))}
+           </ScrollView>
+          )
+          }
+            
+             
+                </View>
+              </ScrollView>
+
+              <ScrollView scrollEventThrottle = {10}>
+              <View style={{flex: 1, backgroundColor: 'transparent'}}>
+                <Text style={{color:'#F3F3F3', fontFamily: 'Avenir', fontSize:15}}>Most Rating</Text>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+
+                {this.props.mostpopular.results.map((item) => (
+
+                <TouchableHighlight key={item.id} onPress={ () => {this.gotoMovie(item.id, item.genre)}}>
+                <View  style={{height: 200, width: 130, marginLeft: 20, marginBottom: 15,marginTop: 10, borderWidth: 1, borderColor: '#0C0C0C', shadowColor:'#000', shadowOffset: {width: 1, height: 1}, shadowRadius: 10,shadowOpacity: 1.0 }}>
+            <View style={{flex: 2, borderRadius:5}} >
+          
+               <Image 
+              source={{uri:item.image}}
+               style={{
+                 flex:1, width: null, height: null, resizeMode: 'cover',borderRadius:20
+               }}
+               />
+            </View>
+            <View style={{justifyContent:"center",alignItems:"center",paddingTop:0}}>
+               <Text style={{color:'#F3F3F3',fontFamily:"Avenir"}}>{item.title}</Text>
+               </View>
+           
+            </View>
+            </TouchableHighlight>
+       
+          ))}
+             </ScrollView>
+             
+                </View>
+              </ScrollView>
+               
+            </Content>
+            
+      </View>
         </Animated.ScrollView>
+        
         <Animated.View
           pointerEvents="none"
           style={[
@@ -130,9 +219,64 @@ export default class HomePage extends Component {
                 transform: [{ translateY: imageTranslate }],
               },
             ]}
-            source={require('../images/aquaman7.jpg')}
+            source={require('../images/aquaman7.png')}
           />
+          <Animated.View
+          style={[
+            styles.bartwo,
+            {
+              opacity: imageOpacity,
+                transform: [{ translateY: imageTranslate }
+              ],
+            },
+          ]}
+        >
+      
+        <Grid>
+       
+          <Col style={{left: 5, width:150}}>
+          <Row>
+          <Text style={{color:'#FDFEFD',fontWeight:"bold", fontFamily:'Avenir', fontSize:30}}>
+            AQUAMAN
+          </Text>
+          </Row>
+          <Row>
+          <Text style={{color:'#BEBEBE', fontFamily:'Avenir', fontSize:15}}>
+            2018 | 18+ | 1h51m
+          </Text>
+          
+          </Row>
+
+          </Col>
+          <Col style={{borderRightWidth:1, borderRightColor:'#BBBBBC'}} />
+          <Col style={{alignContent: "center", alignItems:"center",justifyContent:"center"}}>
+          <Row >
+          <Text style={{color:'#FDFEFD', fontFamily:'Avenir', fontSize:30}}>
+            9.5
+          </Text>
+  
+          </Row>
+          <Row>
+         
+          <StarRating 
+                      disabled= {true}
+                      maxStars= {5}
+                      rating= {4.5}
+                      starSize= {20}
+                      fullStarColor= '#F3F3F3'
+                      emptyStarColor='#505050'
+                    />
+          
+          </Row>
+          </Col>
+         
+        
+          </Grid>
+         
         </Animated.View>
+      
+        </Animated.View>
+        
         <Animated.View
           style={[
             styles.bar,
@@ -144,19 +288,50 @@ export default class HomePage extends Component {
             },
           ]}
         >
-          {/* <Text style={styles.title}>Title</Text> */}
-          
+        <Grid>
+          <Col style={{left: 2}}>
+          <View style={{alignItems:"flex-start"}}>
          
-          <Image 
-          style={{width:130,height:130}}
-          source={require('../images/notflixw.png')}
-          />
-          
+          <Image style={{ marginLeft:0, left:10, marginStart:0,height: 30, width:30}} source={require('../images/Home.png')} />
+          </View>
+          </Col>
+          <Col style={{marginTop:-40}}>
+          <View style={{ alignItems:"center"}}>
+          <Image style={{width: 120 , height: 120}} source={require('../images/notflix.png')} />
+          </View>
+          </Col>
+          <Col />
+        
+          </Grid>
         </Animated.View>
+        <Footer>
+          <FooterTab style={{backgroundColor:'#0C0C0C'}}>
+            <Button>
+              <Icon style={{color:'#D71A18'}} name="home" />
+            </Button>
+            <Button>
+              <Icon style={{color:'#A5A5A5'}} name="search" />
+            </Button>
+            <Button>
+              <Icon style={{color:'#A5A5A5'}} active name="heart" />
+            </Button>
+            <Button>
+              <Icon style={{color:'#A5A5A5'}} name="person" />
+            </Button>
+          </FooterTab>
+        </Footer>
       </View>
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    newrelease: state.categoryReducer,
+    mostpopular : state.popularReducers
+  }
+}
+
+export default connect(mapStateToProps)(HomePage);
 
 const styles = StyleSheet.create({
   fill: {
@@ -186,8 +361,17 @@ const styles = StyleSheet.create({
   bar: {
     backgroundColor: 'transparent',
     marginTop: Platform.OS === 'ios' ? 28 : 38,
-    height: 32,
-    alignItems: 'center',
+    height: 72,
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+  },
+  bartwo: {
+    backgroundColor: 'transparent',
+    marginTop: Platform.OS === 'ios' ? 28 : 225,
+    height: 80,
     justifyContent: 'center',
     position: 'absolute',
     top: 0,
@@ -205,8 +389,5 @@ const styles = StyleSheet.create({
   row: {
     height: 40,
     margin: 16,
-    backgroundColor: '#D3D3D3',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

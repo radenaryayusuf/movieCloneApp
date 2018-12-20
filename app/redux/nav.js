@@ -1,7 +1,7 @@
 import RootNavigator from '../navigators/RootNavigator'
 
 const initialState = RootNavigator.router.getStateForAction(
-  RootNavigator.router.getActionForPathAndParams('LoginPage')
+  RootNavigator.router.getActionForPathAndParams('Welcome')
 )
 
 const navReducer = (state = initialState, action) => {

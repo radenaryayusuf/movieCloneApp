@@ -48,6 +48,11 @@
 		20FC678CCA474C0D828C84CC /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09367E569324448AA788D63E /* Roboto.ttf */; };
 		3C74037077B74D7892C924F2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D91AAD082204934AA657FAD /* SimpleLineIcons.ttf */; };
 		A3D33251BB3F40F18D7ACA4B /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFDE786BB93492CAF567AE0 /* Zocial.ttf */; };
+		BBB9148455434A6E92B06C88 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 319028EBBE1740D1B36C7BFC /* libBVLinearGradient.a */; };
+		F38C041DDF9749ED999D73B9 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472B476C04E94093B490E73D /* Feather.ttf */; };
+		C52026DD18AE4D6CB1D43E8C /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77611C3B7844D789E651A68 /* MaterialCommunityIcons.ttf */; };
+		9CF5A129421048B09E31B447 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1CC40D8C36B4E83B5DDB9DF /* rubicon-icon-font.ttf */; };
+		D61A9BB33697443FBF24318B /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8835E215F3844B2EAB37F3BE /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +369,13 @@
 		09367E569324448AA788D63E /* Roboto.ttf */ = {isa = PBXFileReference; name = "Roboto.ttf"; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3D91AAD082204934AA657FAD /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1DFDE786BB93492CAF567AE0 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		132AE62C65BE40BDAF64A19C /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		319028EBBE1740D1B36C7BFC /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		472B476C04E94093B490E73D /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A77611C3B7844D789E651A68 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C1CC40D8C36B4E83B5DDB9DF /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E1089BAACCC4E4FB660875F /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		8835E215F3844B2EAB37F3BE /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +404,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				BBB9148455434A6E92B06C88 /* libBVLinearGradient.a in Frameworks */,
+				D61A9BB33697443FBF24318B /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +592,8 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				132AE62C65BE40BDAF64A19C /* BVLinearGradient.xcodeproj */,
+				4E1089BAACCC4E4FB660875F /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -640,6 +656,9 @@
 				09367E569324448AA788D63E /* Roboto.ttf */,
 				3D91AAD082204934AA657FAD /* SimpleLineIcons.ttf */,
 				1DFDE786BB93492CAF567AE0 /* Zocial.ttf */,
+				472B476C04E94093B490E73D /* Feather.ttf */,
+				A77611C3B7844D789E651A68 /* MaterialCommunityIcons.ttf */,
+				C1CC40D8C36B4E83B5DDB9DF /* rubicon-icon-font.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1102,6 +1121,9 @@
 				20FC678CCA474C0D828C84CC /* Roboto.ttf in Resources */,
 				3C74037077B74D7892C924F2 /* SimpleLineIcons.ttf in Resources */,
 				A3D33251BB3F40F18D7ACA4B /* Zocial.ttf in Resources */,
+				F38C041DDF9749ED999D73B9 /* Feather.ttf in Resources */,
+				C52026DD18AE4D6CB1D43E8C /* MaterialCommunityIcons.ttf in Resources */,
+				9CF5A129421048B09E31B447 /* rubicon-icon-font.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,6 +1255,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RnDwBoilerplate.app/RnDwBoilerplate";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1250,6 +1280,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RnDwBoilerplate.app/RnDwBoilerplate";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1268,6 +1306,11 @@
 				);
 				PRODUCT_NAME = RnDwBoilerplate;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1285,6 +1328,11 @@
 				);
 				PRODUCT_NAME = RnDwBoilerplate;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1311,6 +1359,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1337,6 +1393,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1362,6 +1426,14 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RnDwBoilerplate-tvOS.app/RnDwBoilerplate-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1387,6 +1459,14 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RnDwBoilerplate-tvOS.app/RnDwBoilerplate-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios/**",
+				);
 			};
 			name = Release;
 		};
